@@ -133,7 +133,7 @@ a {
 }
 
 a:hover {
-	text-decoration: underline;
+	border-bottom: .2rem solid var(--fg-link);
 }
 
 a.homelink {
