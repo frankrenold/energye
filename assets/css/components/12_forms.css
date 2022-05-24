@@ -1,0 +1,71 @@
+form {
+	margin-top: -1rem;
+	margin-bottom: 5rem;
+}
+
+ /* Style inputs, select elements and textareas */
+input[type=text], input[type=email], select, textarea{
+  width: 100%;
+  padding: 0.5rem;
+  border: 0.15rem solid var(--fg-link);
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: var(--ff-sserif);
+  font-size: 1rem;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 1rem 1rem 0.2rem 0;
+  display: inline-block;
+  font-family: var(--ff-serif);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: var(--fg-link);
+  color: var(--bg-g1);
+  padding: 0.5rem 0.7rem;
+  border: 0.15rem solid var(--fg-link);
+  border-radius: 0.2rem;
+  cursor: pointer;
+  float: right;
+  font-family: var(--ff-sserif);
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+/* Style custom checkboxes */
+[type="checkbox"] {
+	display: none;
+	-webkit-appearance: none;
+}
+[type="checkbox"] + label p {
+	margin: 0 0 0.3rem 2rem;
+	font-family: var(--ff-serif);
+	font-size: 1rem;
+	font-weight: normal;
+}
+[type="checkbox"]+label::before {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.3rem;
+  border: 0.15rem solid var(--fg-link);
+  background-color: #fff;
+  display: block;
+  content: "";
+  float: left;
+  margin-right: 0.3rem;
+  z-index: 5;
+  position: relative;
+}
+[type="checkbox"]:checked+label::before {
+  box-shadow: inset 0 0 0 0.2rem #fff;
+  background-color: var(--fg-link);
+}

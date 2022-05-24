@@ -1,0 +1,49 @@
+/* small smartphones */
+@media (max-width: 40em) {
+	html {
+		font-size: var(--rem-base-small);
+	}
+
+	.frame {
+		margin: 0.5rem;
+		padding: 0;
+	}
+
+	h1.xxs {
+		font-size: 3.5rem;
+	}
+
+	h1.xs {
+		font-size: 4.0rem;
+	}
+
+	h1.s {
+		font-size: 4.5rem;
+	}
+}
+
+/* big smartphones */
+@media only screen and (min-width: 40em) {
+	.feature, .info { width: 50%; }
+	.quarter { width: 50%; }
+}
+
+/* tablets */
+@media only screen and (min-width: 54em) {
+	.max 	 { max-width: 1245px; }
+	.content { width: 58.33%; max-width: 745px; }
+	.sidebar { width: 41.66%; max-width: 500px; }
+	.images  { width: 41.66%; padding-top: 0; margin-top: -1.5rem; text-align: right; }
+	.quarter { width: 25%; }
+	.coldivider { border-left: 0.3rem solid rgba(0,0,0,0.1); }
+	.whitespace-m {
+		height: 520px;
+		background: white;
+		margin-top: 1.5rem;
+	}
+}
+
+/* desktop */
+@media only screen and (min-width: 76em) {
+
+}
