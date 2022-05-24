@@ -1,0 +1,21 @@
+<h3>{{ i18n "sub_h" }}</h3>
+<p>{{ i18n "sub_s" }}<p>
+<form action="https://news.frankrenold.ch/subscribe" method="POST" accept-charset="utf-8">
+	<label for="name">{{ i18n "form_flname" }}</label>
+	<input type="text" name="name" id="name"/>
+	<label for="email">{{ i18n "form_email" }}</label>
+	<input type="email" name="email" id="email"/>
+	<input type="checkbox" name="gdpr" id="gdpr"/>
+	<label for="gdpr">
+		<p>{{ i18n "sub_disclaimer" | safeHTML }}</p>
+	</label>
+	<div style="display:none;">
+		<label for="lang">Language</label><br/>
+		<input type="text" name="lang" id="lang" value="{{$.Site.Language}}"/>
+		<label for="hp">HP</label>
+		<input type="text" name="hp" id="hp"/>
+	</div>
+	<input type="hidden" name="list" value="8Fj5892lgDLSZ4PVmgNMpYOQ"/>
+	<input type="hidden" name="subform" value="yes"/>
+	<input type="submit" name="submit" id="submit" value="{{ i18n "form_subscribe" }}"/>
+</form>

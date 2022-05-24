@@ -1,0 +1,18 @@
+<div class="footer">
+	<div class="row">
+		<div class="col quarter no-whitespace">
+
+		</div>
+		<div class="col quarter no-whitespace">
+
+		</div>
+		<div class="col quarter">
+			<h4><img src="/icons/newspaper-line.svg" style="width: 2rem; filter: invert(100%) sepia(4%) saturate(5969%) hue-rotate(307deg) brightness(108%) contrast(89%); float: right;"; /> {{ i18n "footer_updates_h" }}</h4>
+			<p>{{ i18n "footer_updates" | safeHTML }}</p>
+		</div>
+		<div class="col quarter">
+			<h4><img src="/favicon/favicon.svg" style="width: 2rem; float: right"; />{{ i18n "contact_h" }}</h4>
+			{{ partial "contact.html" . }}
+		</div>
+	</div>
+</div>

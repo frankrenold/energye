@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content='{{ .Page.Description }}'>
+	<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico">
+	<link rel="shortcut icon" href="/favicon/favicon.svg">
+	<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+	{{- $style := resources.Get "css/main.css" }}
+	{{- $components := resources.Match "css/components/*.css" }}
+	{{- range $components }}
+	{{- $style = slice $style . | resources.Concat .Name }}
+	{{- end }}
+	{{- $style = slice $style | resources.Concat "all.css" | minify | fingerprint -}}
+	<link rel="stylesheet" href="{{ $style.Permalink }}">
+</head>
+<body>
+	<div class="frame">
+		<div class="row">
+			<div class="col">
+				<div class="header">
+					<h1{{- if .Params.h1size }} class="{{ .Params.h1size }}"{{ end -}}>
+						{{- if .Params.htmltitle }}{{ .Params.htmltitle | safeHTML }}{{ else }}{{ .Title }}{{ end -}}
+					</h1>
+					{{- if .Params.subtitle -}}
+					<h2>
+						{{- .Params.subtitle -}}
+					</h2>
+					{{- end -}}
+				</div>
+			</div>
+		</div>
+		<div class="row row-center">
+			{{ block "main" . }}{{ end }}
+		</div>
+		<div class="row">
+			<div class="col">
+				{{ partial "footer.html" . }}
+			</div>
+		</div>
+	</div>
