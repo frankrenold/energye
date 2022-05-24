@@ -4,3 +4,6 @@ git submodule add https://github.com/frankrenold/energye.git themes/energye
 # Remove
 git rm -r themes/energye
 rm -rf .git/modules/themes/energye
+
+# Keep it up to date every time when fetching for main project
+git submodule update --init
