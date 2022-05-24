@@ -1,0 +1,6 @@
+# Install
+git submodule add https://github.com/frankrenold/energye.git themes/energye
+
+# Remove
+git rm -r themes/energye
+rm -rf .git/modules/themes/energye
