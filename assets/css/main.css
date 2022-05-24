@@ -4,9 +4,9 @@
 	--bg-g1: rgb(255, 255, 255);
 	--bg-g2: rgb(200, 200, 200);
 	--bg-selection: rgba(150, 150, 150, 0.15);
-	--fg-text: rgb(239, 233, 224);
-	--fg-title: rgb(110, 199, 176);
-	--fg-link: rgb(225, 86, 58); #E1563A
+	--fg-text: rgb(30, 30, 30);
+	--fg-title: rgb(60, 60, 60);
+	--fg-link: rgb(3, 118, 187);
 	--fg-footer: rgb(150, 150, 150);
 	--ff-serif: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
 	--ff-sserif: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -117,8 +117,8 @@ h3 {
 	font-weight: bold;
 }
 
-.highlight {
-	color: white;
+h1.highlight {
+	color: var(--bg-g1);
 }
 
 .small {
@@ -132,7 +132,7 @@ a {
 }
 
 a:hover {
-	border-bottom: .2rem solid var(--fg-link);
+	text-decoration: underline;
 }
 
 a.homelink {
@@ -168,7 +168,7 @@ ul.nav a {
 }
 
 ul.nav li.active a {
-	color: white !important;
+	color: var(--bg-g1) !important;
 }
 
 ul.nav li.translation {
