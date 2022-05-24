@@ -1,8 +1,8 @@
 :root {
 	--rem-base: 16px;
 	--rem-base-small: 13px;
-	--bg-g1: rgb(11, 36, 50);
-	--bg-g2: rgb(5, 90, 114);
+	--bg-g1: rgb(255, 255, 255);
+	--bg-g2: rgb(200, 200, 200);
 	--bg-selection: rgba(150, 150, 150, 0.15);
 	--fg-text: rgb(239, 233, 224);
 	--fg-title: rgb(110, 199, 176);
