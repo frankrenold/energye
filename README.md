@@ -1,21 +1,22 @@
-energye - Minimalistic and energy efficient theme for hugo static site generator
+# energye
+Minimalistic and energy efficient theme for hugo static site generator
 ===
 
-# SETUP
+## SETUP
 
-## Into a git controlled hugo project
+### Into a git controlled hugo project
 
-### Install
+#### Install
 ```
 git submodule add https://github.com/frankrenold/energye.git themes/energye
 ```
 
-### Update after installation
+#### Update after installation
 ```
 git submodule foreach git pull
 ```
 
-### Remove
+#### Remove
 ```
 git rm -r themes/energye
 rm -rf .git/modules/themes/energye
