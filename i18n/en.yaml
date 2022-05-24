@@ -1,0 +1,16 @@
+sub_h:
+  other: News
+sub_s:
+  other: Sign up for our email newsletter.
+sub_disclaimer:
+  other: <strong>Yes, I do:</strong> By clicking on this text, you agree to be contacted by us via email with the information provided in this form. Click the unsubscribe link at the bottom of every email to stop receiving emails.
+contact_h:
+  other: In contact
+contact_email:
+  other: Email
+form_flname:
+  other: Full name
+form_email:
+  other: Email
+form_subscribe:
+  other: Subscribe
