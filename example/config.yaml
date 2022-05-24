@@ -39,3 +39,6 @@ languages:
         url: "/slug3-de/"
         weight: 30
     weight: 20
+params:
+  nlPostUrl: "https://sendy.your-domain.org/subscribe"
+  nlListId: "ABDtvuCzeqFDTxb7zXJR"

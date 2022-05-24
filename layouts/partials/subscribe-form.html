@@ -1,6 +1,6 @@
 <h3>{{ i18n "sub_h" }}</h3>
 <p>{{ i18n "sub_s" }}<p>
-<form action="https://news.frankrenold.ch/subscribe" method="POST" accept-charset="utf-8">
+<form action="{{ $.Site.Params.nlPostUrl }}" method="POST" accept-charset="utf-8">
 	<label for="name">{{ i18n "form_flname" }}</label>
 	<input type="text" name="name" id="name"/>
 	<label for="email">{{ i18n "form_email" }}</label>
@@ -15,7 +15,7 @@
 		<label for="hp">HP</label>
 		<input type="text" name="hp" id="hp"/>
 	</div>
-	<input type="hidden" name="list" value="8Fj5892lgDLSZ4PVmgNMpYOQ"/>
+	<input type="hidden" name="list" value="{{ $.Site.Params.nlListId }}"/>
 	<input type="hidden" name="subform" value="yes"/>
 	<input type="submit" name="submit" id="submit" value="{{ i18n "form_subscribe" }}"/>
 </form>
