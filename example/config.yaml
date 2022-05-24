@@ -1,0 +1,41 @@
+baseURL: "https://your-domain.org/"
+title: "Site Title"
+defaultContentLanguage: "en"
+theme: "energye"
+languages:
+  en:
+    languageName: "English"
+    languageCode: "en-US"
+    menu:
+      main:
+      - name: "Home"
+        url: "/"
+        weight: 1
+      - name: "menu1"
+        url: "/menu1/"
+        weight: 10
+      - name: "menu2"
+        url: "/menu2/"
+        weight: 20
+      - name: "menu3"
+        url: "/menu3/"
+        weight: 30
+    weight: 10
+  de:
+    languageName: "Deutsch"
+    languageCode: "de-CH"
+    menu:
+      main:
+      - name: "Zuhause"
+        url: "/"
+        weight: 1
+      - name: "menu1-de"
+        url: "/slug1-de/"
+        weight: 10
+      - name: "menu2-de"
+        url: "/slug2-de/"
+        weight: 20
+      - name: "menu3-de"
+        url: "/slug3-de/"
+        weight: 30
+    weight: 20
