@@ -11,7 +11,7 @@
 	{{- $style := resources.Get "css/main.css" }}
 	{{- $components := resources.Match "css/components/*.css" }}
 	{{- range $components }}
-	{{- $style = slice $style . | resources.Concat .Name }}
+		{{- $style = slice $style . | resources.Concat .Name }}
 	{{- end }}
 	{{- $style = slice $style | resources.Concat "all.css" | minify | fingerprint -}}
 	<link rel="stylesheet" href="{{ $style.Permalink }}">
