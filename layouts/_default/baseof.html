@@ -15,6 +15,7 @@
 	{{- end }}
 	{{- $style = slice $style | resources.Concat "all.css" | minify | fingerprint -}}
 	<link rel="stylesheet" href="{{ $style.Permalink }}">
+	{{ partial "head-scripts.html" . }}
 </head>
 <body>
 	<div class="frame">
