@@ -21,3 +21,8 @@ git submodule foreach git pull
 git rm -r themes/energye
 rm -rf .git/modules/themes/energye
 ```
+
+## Create new E-Mail Update
+```
+hugo new --kind update updates/220525
+```
