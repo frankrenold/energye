@@ -40,5 +40,6 @@ languages:
         weight: 30
     weight: 20
 params:
-  nlPostUrl: "https://sendy.your-domain.org/subscribe"
-  nlListId: "ABDtvuCzeqFDTxb7zXJR"
+  newsletter :
+    postUrl: "https://sendy.your-domain.org/subscribe"
+    listId: "ABDtvuCzeqFDTxb7zXJR"

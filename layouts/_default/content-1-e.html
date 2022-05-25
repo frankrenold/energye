@@ -2,7 +2,6 @@
 <div class="col content">
 	{{ with .Resources.GetMatch "_*" }}
 		{{- $img := .Fill "800x195 q80" -}}
-		{{- $img := $img | images.Filter (images.Colorize 190 100 100) -}}
 		<img class="featuredimg" src="{{ $img.RelPermalink }}" />
 	{{ end }}
 	{{- .Content -}}
