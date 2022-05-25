@@ -1,0 +1,4 @@
+{{ with resources.Get .Get 0 }}
+  {{- $img := .Fill "800x195 q80" -}}
+  <img src="{{ $img.RelPermalink }}" />
+{{ end }}
