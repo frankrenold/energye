@@ -2,6 +2,7 @@
 {{ $caption := .Get 1}}
 {{ with resources.Get $assetsrc }}
   {{- $img := .Resize "670x q80" -}}
+  {{- $img = $img.Filter (images.Grayscale) }}
   <figure>
     <img src="{{ $img.RelPermalink }}" style="width:100%">
     {{ with $caption }}
@@ -9,4 +10,3 @@
     {{ end }}
   </figure>
 {{ end }}
-HELLO
