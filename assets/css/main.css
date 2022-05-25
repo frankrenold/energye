@@ -177,6 +177,10 @@ ul.nav li.translation {
 	text-transform: uppercase;
 }
 
+figure {
+	margin: 1rem 0;
+}
+
 .featuredimg {
 	float: right;
 	width: 100%;

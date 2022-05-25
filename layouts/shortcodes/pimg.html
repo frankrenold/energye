@@ -1,4 +1,11 @@
-{{ with resources.Get (.Get 0) }}
-  {{- $img := .Fill "800x195 q80" -}}
-  <img src="{{ $img.RelPermalink }}" />
+{{ $assetsrc := .Get 0}}
+{{ $caption := .Get 1}}
+{{ with resources.Get $assetsrc }}
+  {{- $img := .Resize "670x q80" -}}
+  <figure>
+    <img src="{{ $img.RelPermalink }}" style="width:100%">
+    {{ with $caption }}
+      <figcaption>{{ $caption }}</figcaption>
+    {{ end }}
+  </figure>
 {{ end }}
