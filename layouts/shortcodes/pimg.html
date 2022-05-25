@@ -1,9 +1,10 @@
-{{ $assetsrc := .Get 0}}
-{{ $caption := .Get 1}}
+{{ $assetsrc := .Get "src"}}
+{{ $caption := .Get "caption"}}
+{{ $class := .Get "class"}}
 {{ with resources.Get $assetsrc }}
   {{- $img := .Resize "670x q80" -}}
   {{- $img = $img.Filter (images.Grayscale) }}
-  <figure>
+  <figure{{ with $class }} class="{{ . }}"{{ end }}>
     <img src="{{ $img.RelPermalink }}" style="width:100%">
     {{ with $caption }}
       <figcaption>{{ $caption }}</figcaption>

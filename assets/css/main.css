@@ -179,6 +179,21 @@ ul.nav li.translation {
 
 figure {
 	margin: 0 0 1.5rem 0;
+	width: 100%;
+}
+
+figure.half {
+	width: 46%;
+}
+
+figure.left {
+	margin-right: 1.5rem;
+	float: left;
+}
+
+figure.right {
+	margin-left: 1.5rem;
+	float: right;
 }
 
 figcaption {
