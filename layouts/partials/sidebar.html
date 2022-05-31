@@ -1,5 +1,15 @@
-<h3>
-  {{ i18n "contact_h" }}
-</h3>
-{{ partial "contact.html" . }}
-{{ partial "subscribe-form.html" . }}
+{{ $widgets := .Resources.Match "widget_[0-9]*" }}
+<div class="col sidebar{{ with $widgets }} coldivider{{ end }}">
+{{ range $widgets }}
+  {{ if (isset .Params `partial`) }}
+    {{ partial .Params.partial . }}
+  {{ else }}
+    {{ with .Params.title }}
+      <h3>{{ . }}</h3>
+    {{ end }}
+    {{ .Content }}
+  {{ end }}
+{{ else }}
+  <div class="whitespace-m"></div>
+{{ end }}
+</div>
