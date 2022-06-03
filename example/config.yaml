@@ -39,6 +39,10 @@ languages:
         url: "/slug3-de/"
         weight: 30
     weight: 20
+    params:
+      newsletter :
+        postUrl: "https://sendy.your-domain.org/subscribe"
+        listId: "XXXDvuCzeqFDTxb7Txb7"
 params:
   newsletter :
     postUrl: "https://sendy.your-domain.org/subscribe"

@@ -118,7 +118,7 @@ h3 {
 	font-weight: bold;
 }
 
-h1.highlight {
+h1 span.highlight {
 	color: var(--bg-g1);
 }
 
