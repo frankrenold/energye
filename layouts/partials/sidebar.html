@@ -1,4 +1,4 @@
-{{ $widgets := .Resources.Match "widget_[0-9]*" }}
+{{ $widgets := sort (.Resources.Match "widget_[0-9]*") "Name" }}
 <div class="col sidebar{{ with $widgets }} coldivider{{ end }}">
 {{ range $widgets }}
   {{ if (isset .Params `partial`) }}
