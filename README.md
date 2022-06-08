@@ -1,6 +1,6 @@
 # energye
-Minimalistic and energy efficient theme for hugo static site generator
-===
+
+*Minimalistic energy efficient theme for [hugo static site generator]([https://gohugo.io/](https://github.com/gohugoio/hugo))*
 
 ## SETUP
 

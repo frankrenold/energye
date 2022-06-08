@@ -1,0 +1,14 @@
+{{ $params := .Params }}
+{{ with .Resources.GetMatch "_*" }}
+  {{- $img := .Fill "800x195 q80" -}}
+  <figure class="featuredimg">
+    <img src="{{ $img.RelPermalink }}" />
+      {{ if $params.featuredImgOrigin }}
+      <figcaption>
+        <p class="origin{{ if $params.featuredImgLicenseLink }} cc{{ end }}">
+            Source: {{ with $params.featuredImgOriginLink }}<a target="_blank" href="{{ . }}">{{ end }}{{ $params.featuredImgOrigin }}{{ if $params.featuredImgOriginLink }}</a>{{ end }}{{ with $params.featuredImgLicenseLink }} (<a target="_blank" href="{{ . }}">License</a>){{ end }}
+        </p>
+      </figcaption>
+      {{ end }}
+  </figure>
+{{ end }}

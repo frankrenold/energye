@@ -1,12 +1,25 @@
-{{ $assetsrc := .Get "src"}}
-{{ $caption := .Get "caption"}}
-{{ $class := .Get "class"}}
-{{ with resources.Get $assetsrc }}
-  {{- $img := .Resize "1200x q80" -}}
-  <figure{{ with $class }} class="{{ . }}"{{ end }}>
-    <img src="{{ $img.RelPermalink }}" style="width:100%">
-    {{ with $caption }}
-      <figcaption>{{ $caption }}</figcaption>
+{{ $src := .Get "src"}}
+{{ $img := resources.Get $src }}
+{{ if $img }}
+<figure {{ with .Get "class" }}class="{{ . }}"{{ end }}>
+  {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
+    <img src="{{ $img.RelPermalink }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} />
+  {{ if .Get "link" }}</a>{{ end }}
+  {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr") }}
+  <figcaption>{{ if isset .Params "title" }}
+    <h4>{{ .Get "title" }}</h4>{{ end }}
+    {{ if or (.Get "caption") (.Get "attr") }}<p>
+    {{ .Get "caption" }}
+    {{ with .Get "attrlink" }}<a href="{{ . }}"> {{ end }}
+    {{ .Get "attr" }}
+    {{ if .Get "attrlink" }}</a> {{ end }}
+    </p> {{ end }}
+    {{ if .Get "origin" }}
+    <p class="origin{{ if .Get "licenseLink" }} cc{{ end }}">
+        Source: {{ with .Get "originLink" }}<a target="_blank" href="{{ . }}">{{ end }}{{ .Get "origin" }}{{ if .Get "originLink" }}</a>{{ end }}{{ with .Get "licenseLink" }} (<a target="_blank" href="{{ . }}">License</a>){{ end }}
+    </p>
     {{ end }}
-  </figure>
+  </figcaption>
+  {{ end }}
+</figure>
 {{ end }}
