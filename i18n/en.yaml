@@ -14,3 +14,7 @@ form_email:
   other: Email
 form_subscribe:
   other: Subscribe
+image_source:
+  other: Source
+image_license:
+  other: License

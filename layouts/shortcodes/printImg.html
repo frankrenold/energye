@@ -16,7 +16,7 @@
     </p> {{ end }}
     {{ if .Get "origin" }}
     <p class="origin{{ if .Get "licenseLink" }} cc{{ end }}">
-        Source: {{ with .Get "originLink" }}<a target="_blank" href="{{ . }}">{{ end }}{{ .Get "origin" }}{{ if .Get "originLink" }}</a>{{ end }}{{ with .Get "licenseLink" }} (<a target="_blank" href="{{ . }}">License</a>){{ end }}
+      {{ i18n "image_source" }}: {{ with .Get "originLink" }}<a target="_blank" href="{{ . }}">{{ end }}{{ .Get "origin" }}{{ if .Get "originLink" }}</a>{{ end }}{{ with .Get "licenseLink" }} (<a target="_blank" href="{{ . }}">{{ i18n "image_license" }}</a>){{ end }}
     </p>
     {{ end }}
   </figcaption>

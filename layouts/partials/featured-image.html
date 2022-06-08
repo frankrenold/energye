@@ -6,7 +6,7 @@
       {{ if $params.featuredImgOrigin }}
       <figcaption>
         <p class="origin{{ if $params.featuredImgLicenseLink }} cc{{ end }}">
-            Source: {{ with $params.featuredImgOriginLink }}<a target="_blank" href="{{ . }}">{{ end }}{{ $params.featuredImgOrigin }}{{ if $params.featuredImgOriginLink }}</a>{{ end }}{{ with $params.featuredImgLicenseLink }} (<a target="_blank" href="{{ . }}">License</a>){{ end }}
+            {{ i18n "image_source" }}: {{ with $params.featuredImgOriginLink }}<a target="_blank" href="{{ . }}">{{ end }}{{ $params.featuredImgOrigin }}{{ if $params.featuredImgOriginLink }}</a>{{ end }}{{ with $params.featuredImgLicenseLink }} (<a target="_blank" href="{{ . }}">{{ i18n "image_license" }}</a>){{ end }}
         </p>
       </figcaption>
       {{ end }}

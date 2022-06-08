@@ -1,9 +1,6 @@
 {{- define "main" -}}
 <div class="col content">
-	{{ with .Resources.GetMatch "_*" }}
-		{{- $img := .Fill "800x195 q80" -}}
-		<img class="featuredimg" src="{{ $img.RelPermalink }}" />
-	{{ end }}
+	{{ partial "featured-image" . }}
 	{{- .Content -}}
 </div>
 {{ partial "sidebar" . }}
