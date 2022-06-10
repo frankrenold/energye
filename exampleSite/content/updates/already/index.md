@@ -1,10 +1,8 @@
 ---
 title: Already
-subtitle: Part of the club.
+subtitle: a part of the club.
 ignoreInLists: true
 ---
-### Thank you
+{{<feedback class="done">}}We have already found your address in the distribution list.{{</feedback>}}
 
-We have already found your address in the distribution list.
-
-[back]({{< ref "/" >}} "Home")
+[Overview]({{< relref "/" >}} "Home")

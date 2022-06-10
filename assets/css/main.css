@@ -140,6 +140,19 @@ a.homelink {
 	color: var(--fg-title);
 }
 
+p.feedback {
+	margin-top: 1.5rem;
+	font-weight: bold;
+}
+
+p.error {
+	color: var(--fg-link);
+}
+
+p.done {
+	color: var(--fg-title);
+}
+
 ul {
 	list-style-type: circle;
 }

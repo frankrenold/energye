@@ -1,10 +1,8 @@
 ---
-title: Welcome
-subtitle: To the club.
+title: Thanks
+subtitle: Welcome to the club.
 ignoreInLists: true
 ---
-### Thank you
+{{<feedback class="done">}}You are subscribed to our updates list and we will contact you as soon as it gets interesting.{{</feedback>}}
 
-You are subscribed to our updates list and we will contact you as soon as it gets interesting.
-
-[back]({{< ref "/" >}} "Home")
+[Overview]({{< relref "/" >}} "Home")

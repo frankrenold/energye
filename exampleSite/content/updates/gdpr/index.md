@@ -2,8 +2,6 @@
 title: Oh no!
 ignoreInLists: true
 ---
-### It did not work yet
+{{<feedback class="error">}}Please make sure you click the checkbox at the end of the form to accept our privacy statement.{{</feedback>}}
 
-Please make sure you click the checkbox at the end of the form to accept our privacy statement.
-
-[back]({{< ref "/" >}} "Home")
+{{<backlink>}}back{{</backlink>}}
