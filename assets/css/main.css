@@ -230,7 +230,7 @@ figcaption p.origin {
 }
 
 figcaption p.cc {
-	background-image: url("/icons/creative-commons-line.svg");
+	background-image: url("/icon/creative-commons-line.svg");
 	background-repeat: no-repeat;
 	padding-right: 1.2rem;
 	background-size: 1rem;
