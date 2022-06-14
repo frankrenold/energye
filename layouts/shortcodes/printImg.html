@@ -1,5 +1,11 @@
 {{ $src := .Get "src"}}
-{{ $img := resources.Get $src }}
+{{ $img := .Page.Resources.GetMatch $src }}
+{{ if not $img}}
+{{ $img = .Page.Parent.Resources.GetMatch $src }}
+{{ end }}
+{{ if not $img}}
+{{ $img = resources.Get $src }}
+{{ end }}
 {{ if $img }}
 <figure {{ with .Get "class" }}class="{{ . }}"{{ end }}>
   {{ with .Get "link" }}<a href="{{ . }}">{{ end }}

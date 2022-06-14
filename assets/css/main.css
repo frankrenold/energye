@@ -200,6 +200,10 @@ figure img {
 	width: 100%;
 }
 
+figure a:hover {
+	border: none;
+}
+
 figcaption {
 	padding: 0.3rem 0.5rem ;
 	margin: 0;
