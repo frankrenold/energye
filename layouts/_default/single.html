@@ -2,6 +2,9 @@
 <div class="col content">
 	{{ partial "featured-image" . }}
 	{{- .Content -}}
+	{{ if .Params.updated }}
+	<p class="updated">{{ i18n "updated" }} {{ .Params.updated | time.Format ":date_full"}}{{ with .Params.updatedPlace }} ({{ . }}){{ end }}</p>
+	{{ end }}
 </div>
 {{ partial "sidebar" . }}
 {{- end -}}
