@@ -27,6 +27,7 @@
 	.feature, .info { width: 50%; }
 	.half { width: 50%; }
 	.quarter { width: 50%; }
+	.portfolio-item { width: 50%; }
 }
 
 /* tablets */
@@ -36,6 +37,7 @@
 	.sidebar { width: 41.66%; max-width: 500px; }
 	.images  { width: 41.66%; padding-top: 0; margin-top: -1.5rem; text-align: right; }
 	.quarter { width: 25%; }
+	.portfolio-item { width: 33.33%; }
 	.coldivider { border-left: 0.3rem solid rgba(0,0,0,0.1); }
 	.whitespace-m {
 		height: 520px;

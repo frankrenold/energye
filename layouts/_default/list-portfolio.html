@@ -1,0 +1,18 @@
+{{- define "main" -}}
+<div class="col">
+	{{- .Content -}}
+	<div class="row">
+    {{ range sort (where .Pages "Params.ignoreInLists" "!=" true) ".Date" "desc" }}
+    <div class="col portfolio-item">
+			<div class="portfolio-container"{{ with .Params.containerstyle }} style="{{ . | safeCSS }}"{{ end }}>
+				<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+				{{ with .Params.subtitle }}<p>{{ . }}</p>{{ end }}
+			</div>
+			<div class="portfolio-button">
+				<a href="{{ .RelPermalink }}">{{ i18n "more" }}</a>
+			</div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{- end -}}

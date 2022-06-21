@@ -1,0 +1,29 @@
+{{ $printImg := .Scratch.Get "printImg" }}
+{{ $img := .Page.Resources.GetMatch $printImg.src }}{{/* 1. IMG FROM PAGE RESOURCES  */}}
+{{ if eq $img nil }}{{ $img = .Page.Parent.Resources.GetMatch $printImg.src }}{{ end }}{{/* 2. IMG FROM PARENT PAGE RESOURCES  */}}
+{{ if eq $img nil }}{{ $img = resources.Get $printImg.src }}{{ end }}{{/* 3. IMG FROM ASSETS  */}}
+{{ if $img }}
+  {{ if $printImg.fill }}{{ $img = $img.Fill $printImg.fill }}{{ end }}
+  {{ if $printImg.filter }}{{ $img = $img | images.Filter $printImg.filter }}{{ end }}
+  <figure {{ with $printImg.class }}class="{{ . }}"{{ end }}>
+    {{ with $printImg.link }}<a href="{{ . }}">{{ end }}
+      <img src="{{ $img.RelPermalink }}" {{ if or ($printImg.alt) ($printImg.caption) }}alt="{{ with $printImg.alt }}{{ . }}{{ else }}{{ $printImg.caption }}{{ end }}"{{ end }} />
+    {{ if $printImg.link }}</a>{{ end }}
+    {{ if or (or ($printImg.caption)) ($printImg.attr) }}
+      <figcaption>
+        {{ if isset .Params "title" }}<h4>{{ $printImg.title }}</h4>{{ end }}
+        {{ if or ($printImg.caption) ($printImg.attr) }}<p>
+        {{ $printImg.caption }}
+        {{ with $printImg.attrlink }}<a href="{{ . }}"> {{ end }}
+        {{ $printImg.attr }}
+        {{ if $printImg.attrlink }}</a> {{ end }}
+        </p>{{ end }}
+        {{ if $printImg.origin }}
+          <p class="origin{{ if $printImg.licenseLink }} cc{{ end }}">
+            {{ i18n "image_source" }}: {{ with $printImg.originLink }}<a target="_blank" href="{{ . }}">{{ end }}{{ $printImg.origin }}{{ if $printImg.originLink }}</a>{{ end }}{{ with $printImg.licenseLink }} (<a target="_blank" href="{{ . }}">{{ i18n "image_license" }}</a>){{ end }}
+          </p>
+        {{ end }}
+      </figcaption>
+    {{ end }}
+  </figure>
+{{ end }}

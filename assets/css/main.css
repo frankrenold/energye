@@ -252,3 +252,31 @@ figcaption p.cc {
 	padding: 0 ;
 	border: none;
 }
+
+.portfolio-container {
+	background: white;
+	height: 15rem;
+	padding: 0 1rem;
+	margin: 1.5rem 0 0 0;
+}
+.portfolio-container h3 {
+	color: var(--fg-link);
+}
+.portfolio-button {
+	background-color: var(--fg-link);
+	padding: .5rem .7rem;
+	border: .15rem solid var(--fg-link);
+	border-bottom-left-radius: .2rem;
+	border-bottom-right-radius: .2rem;
+	text-align: center;
+}
+.portfolio-button a {
+	font-family: var(--ff-sserif);
+	color: var(--bg-g1);
+	font-size: 1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.portfolio-button a:hover {
+	border: none;
+}
