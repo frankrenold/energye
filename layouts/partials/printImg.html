@@ -1,6 +1,6 @@
 {{ $printImg := .Scratch.Get "printImg" }}
 {{ $img := .Page.Resources.GetMatch $printImg.src }}{{/* 1. IMG FROM PAGE RESOURCES  */}}
-{{ if eq $img nil }}{{ $img = .Page.Parent.Resources.GetMatch $printImg.src }}{{ end }}{{/* 2. IMG FROM PARENT PAGE RESOURCES  */}}
+{{ if (and (eq $img nil) (.Page.Parent)) }}{{ $img = .Page.Parent.Resources.GetMatch $printImg.src }}{{ end }}{{/* 2. IMG FROM PARENT PAGE RESOURCES  */}}
 {{ if eq $img nil }}{{ $img = resources.Get $printImg.src }}{{ end }}{{/* 3. IMG FROM ASSETS  */}}
 {{ if $img }}
   {{ if $printImg.fill }}{{ $img = $img.Fill $printImg.fill }}{{ end }}
