@@ -91,16 +91,23 @@ p, li {
 	line-height: 150%;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	margin: 0 0 1.5rem 0;
-	display: inline-block;
 	color: var(--fg-title);
+	font-weight: bold;
+}
+
+h1, h3, h4 {
+	font-family: var(--ff-sserif);
+}
+
+h1, h2, h3 {
+	display: inline-block;
 }
 
 h1 {
 	margin-bottom: 0;
 	font-size: 5.8rem;
-	font-family: var(--ff-sserif);
 	line-height: 130%;
 	padding-right: 1.5rem;
 }
@@ -114,8 +121,10 @@ h2 {
 h3 {
 	margin-top: 1.5rem;
 	font-size: 2.5rem;
-	font-family: var(--ff-sserif);
-	font-weight: bold;
+}
+
+h4 {
+	font-size: 1.5rem;
 }
 
 h1 span.highlight {
