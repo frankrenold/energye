@@ -1,0 +1,48 @@
+{{ $filterQueue := slice }}
+{{ $filters := split . ","}}
+{{ range $filters }}
+  {{ $filterParts := split (trim . " ") " "}}
+  {{ if eq (index $filterParts 0) "Brightness" }}
+    {{ $filterQueue = $filterQueue | append (images.Brightness (int (index $filterParts 1))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "ColorBalance" }}
+    {{ $filterQueue = $filterQueue | append (images.ColorBalance (int (index $filterParts 1)) (int (index $filterParts 2)) (int (index $filterParts 3))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "Colorize" }}
+    {{ $filterQueue = $filterQueue | append (images.Colorize (int (index $filterParts 1)) (int (index $filterParts 2)) (int (index $filterParts 3))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "Contrast" }}
+    {{ $filterQueue = $filterQueue | append (images.Contrast (int (index $filterParts 1))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "Gamma" }}
+    {{ $filterQueue = $filterQueue | append (images.Gamma (float (index $filterParts 1))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "GaussianBlur" }}
+    {{ $filterQueue = $filterQueue | append (images.GaussianBlur (int (index $filterParts 1))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "Grayscale" }}
+    {{ $filterQueue = $filterQueue | append (images.Grayscale) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "Hue" }}
+    {{ $filterQueue = $filterQueue | append (images.Hue (int (index $filterParts 1))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "Invert" }}
+    {{ $filterQueue = $filterQueue | append (images.Invert) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "Pixelate" }}
+    {{ $filterQueue = $filterQueue | append (images.Pixelate (int (index $filterParts 1))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "Saturation" }}
+    {{ $filterQueue = $filterQueue | append (images.Saturation (int (index $filterParts 1))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "Sepia" }}
+    {{ $filterQueue = $filterQueue | append (images.Sepia (int (index $filterParts 1))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "Sigmoid" }}
+    {{ $filterQueue = $filterQueue | append (images.Sigmoid (int (index $filterParts 1)) (int (index $filterParts 2))) }}
+  {{ end }}
+  {{ if eq (index $filterParts 0) "UnsharpMask" }}
+    {{ $filterQueue = $filterQueue | append (images.UnsharpMask (float (index $filterParts 1)) (float (index $filterParts 2)) (float (index $filterParts 3))) }}
+  {{ end }}
+{{ end }}
+{{ return $filterQueue }}

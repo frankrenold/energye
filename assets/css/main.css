@@ -216,7 +216,8 @@ figure a:hover {
 figcaption {
 	padding: 0.3rem 0.5rem ;
 	margin: 0;
-	font-size: 1rem;
+	font-family: var(--ff-sserif);
+	font-size: 0.8rem;
 	color: var(--fg-title);
 	border-left: 1px solid var(--fg-title);
 	border-bottom: 1px solid var(--fg-title);
@@ -238,8 +239,7 @@ figcaption p:last-of-type {
 
 figcaption p.origin {
 	text-align: right;
-	font-style: italic;
-	font-size: 0.8rem;
+	font-size: 0.6rem;
 }
 
 figcaption p.cc {
