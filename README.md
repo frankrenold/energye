@@ -4,6 +4,27 @@
 
 ## SETUP
 
+### As a HUGO module ([preferred](https://www.hugofordevelopers.com/articles/master-hugo-modules-managing-themes-as-modules/))
+
+#### Install
+
+Make your project a HUGO module
+
+```
+hugo mod init your-project-repo
+```
+
+Add this theme as a HUGO module
+
+```
+#config.yaml
+module:
+  imports:
+  - path: github.com/frankrenold/energye
+```
+
+[Read more](https://www.hugofordevelopers.com/articles/master-hugo-modules-managing-themes-as-modules/)
+
 ### Into a git controlled hugo project
 
 #### Install
