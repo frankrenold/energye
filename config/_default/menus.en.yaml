@@ -1,0 +1,13 @@
+main:
+- name: "Home"
+  url: "/"
+  weight: 1
+- name: "now"
+  url: "/now/"
+  weight: 10
+- name: "about"
+  url: "/about/"
+  weight: 20
+- name: "projects"
+  url: "/projects/"
+  weight: 30
