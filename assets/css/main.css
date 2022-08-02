@@ -289,3 +289,7 @@ figcaption p.cc {
 .portfolio-button a:hover {
 	border: none;
 }
+
+.col .portfolio-content {
+	float: right;
+}

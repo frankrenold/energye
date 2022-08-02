@@ -1,6 +1,12 @@
 {{- define "main" -}}
 <div class="col">
-	{{- .Content -}}
+	{{ with .Content }}
+	<div class="row">
+			<div class="col portfolio-content">
+				{{ . }}
+			</div>
+	</div>
+	{{ end }}
 	<div class="row">
     {{ range sort (where .Pages "Params.ignoreInLists" "!=" true) ".Date" "desc" }}
     <div class="col portfolio-item">
