@@ -3,9 +3,9 @@
 	{{ partial "featured-image" . }}
 	{{- .Content -}}
 	<ul>
-    {{ range first 3 (where .Pages "Type" "updates") }}
+    {{ range last 3 (where .Pages "Type" "updates") }}
     <li>
-        <a href="{{.Permalink}}">{{.Title}} ({{.Date | time.Format ":date_long"}})</a>
+        <a href="{{.Permalink}}">{{.Params.subtitle}} ({{.Params.publishDate | time.Format ":date_long"}})</a>
     </li>
     {{ end }}
   </ul>
