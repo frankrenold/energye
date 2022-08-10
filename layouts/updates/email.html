@@ -85,7 +85,7 @@
         }
 
         td[class="section-padding"]{
-          padding: 0 15px 50px 15px !important;
+          padding: 20px 15px 50px 15px !important;
         }
 
         td[class="section-padding-bottom-image"]{
@@ -261,7 +261,7 @@
                         <!-- UNSUBSCRIBE COPY -->
                         <table role="presentation" width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
                             <tr>
-                                <td align="center" valign="middle" style="font-size: 16px; font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif; color:#969696;">
+                                <td align="center" valign="middle" style="font-size: 16px; font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif; color:#969696;" class="padding-copy">
                                   <p>{{ .PublishDate | time.Format ":date_long" }}, <a href="{{ ref . "/" }}" style="color: rgb(200, 79, 104); text-decoration: none;">{{ .Params.author }}</a></p>
                                   <p>{{ i18n "updates_for" }} [Name,fallback=dich] ([Email])</p>
                                   {{ with i18n "updates_footer" }}<p>{{ . | safeHTML }}</p>{{ end }}
