@@ -25,6 +25,11 @@ module:
 
 [Read more](https://www.hugofordevelopers.com/articles/master-hugo-modules-managing-themes-as-modules/)
 
+#### Update after installation
+```
+hugo mod get
+```
+
 ### Into a git controlled hugo project
 
 #### Install
@@ -45,5 +50,5 @@ rm -rf .git/modules/themes/energye
 
 ## Create new E-Mail Update
 ```
-hugo new --kind update updates/220525
+hugo new updates/220525
 ```
