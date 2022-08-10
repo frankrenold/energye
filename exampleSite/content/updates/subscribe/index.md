@@ -2,5 +2,7 @@
 title: Updates
 subtitle: To your email inbox.
 layout: subscribe
-ignoreInLists: true
+_build:
+  list: false
+  render: true
 ---

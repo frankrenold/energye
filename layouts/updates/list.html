@@ -3,7 +3,7 @@
 	{{ partial "featured-image" . }}
 	{{- .Content -}}
 	<ul>
-    {{ range first 3 (where .Pages "Params.ignoreInLists" "!=" true) }}
+    {{ range first 3 (where .Pages "Type" "updates") }}
     <li>
         <a href="{{.Permalink}}">{{.Title}} ({{.Date | time.Format ":date_long"}})</a>
     </li>
