@@ -5,7 +5,7 @@
 	<ul>
     {{ range last 3 (where .Pages "Type" "updates") }}
     <li>
-        <a href="{{.Permalink}}">{{.Params.subtitle}} ({{.Params.publishDate | time.Format ":date_long"}})</a>
+        <a href="{{.Permalink}}">{{.Params.subtitle}}{{ with .Params.publishDate }} ({{ . | time.Format ":date_long"}}){{ end }}</a>
     </li>
     {{ end }}
   </ul>
