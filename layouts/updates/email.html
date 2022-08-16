@@ -182,12 +182,12 @@
 <!-- ONE COLUMN SECTION -->
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
-        <td bgcolor="{{ if (isset .Params `bgnd`) }}{{ .Params.bgnd }}{{ else }}#ffffff{{ end }}" align="center" style="padding: 0 15px 50px 15px;{{ with .Params.highlight }} border-top: 2px solid {{ . }};{{ end }}" class="section-padding">
+        <td bgcolor="{{ if (isset .Params "bgnd") }}{{ .Params.bgnd }}{{ else }}#ffffff{{ end }}" align="center" style="padding: 0 15px 50px 15px;{{ with .Params.highlight }} border-top: 2px solid {{ . }};{{ end }}" class="section-padding">
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="500" class="responsive-table">
                 <tr>
                     <td>
                         <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
-                            {{ if (isset .Params `heroimg`) }}
+                            {{ if (isset .Params "heroimg") }}
                             {{ $heroRes := $.Resources.GetMatch .Params.heroimg}}
                             {{ $heroRes = $heroRes.Fill "1000x400 q80 center" }}
                             <tr>
@@ -200,10 +200,10 @@
                                                       <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
                                                           <tr>
                                                               <td>
-                                                                {{ if (isset .Params `href`) }}<a href="{{ .Params.href }}" target="_blank">{{ end }}
-                                                                  <img src=" {{ $heroRes.Permalink }}" width="500" height="200" border="0" alt="{{ if (isset .Params `heroalt`) }}{{ .Params.heroalt }}{{ else }}{{ .Title }}{{ end }}"
+                                                                {{ if (isset .Params "href") }}<a href="{{ .Params.href }}" target="_blank">{{ end }}
+                                                                  <img src=" {{ $heroRes.Permalink }}" width="500" height="200" border="0" alt="{{ if (isset .Params "heroalt") }}{{ .Params.heroalt }}{{ else }}{{ .Title }}{{ end }}"
                                                                     style="display: block; padding: 0; width: 500px height: 200px; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;" class="img-max">
-                                                                {{ if (isset .Params `href`) }}</a>{{ end }}
+                                                                {{ if (isset .Params "href") }}</a>{{ end }}
                                                               </td>
                                                             </tr>
                                                         </table>
@@ -227,7 +227,7 @@
                                     </table>
                                 </td>
                             </tr>
-                            {{ if (and (isset .Params `button`) (isset .Params `href`)) }}
+                            {{ if (and (isset .Params "button") (isset .Params "href")) }}
                             <tr>
                                 <td>
                                     <!-- BULLETPROOF BUTTON -->

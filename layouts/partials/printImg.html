@@ -10,7 +10,7 @@
     {{ if .link }}</a>{{ end }}
     {{ if or (or (.caption)) (.attr) }}
       <figcaption>
-        {{ if isset .Params "title" }}<h4>{{ .title }}</h4>{{ end }}
+        {{ if .title }}<h4>{{ .title }}</h4>{{ end }}
         {{ if or (.caption) (.attr) }}<p>
         {{ .caption }}
         {{ with .attrlink }}<a href="{{ . }}"> {{ end }}
