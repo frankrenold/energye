@@ -2,7 +2,7 @@
 <div class="col sidebar{{ with $widgets }} coldivider{{ end }}">
 {{ range $widgets }}
   {{ if (isset .Params "partial") }}
-    {{ partial .Params.partial . }}
+    {{ partial .Params.partial .Parent }}
   {{ else }}
     {{ with .Params.title }}
       <h3>{{ . }}</h3>
