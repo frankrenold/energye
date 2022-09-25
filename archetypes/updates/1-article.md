@@ -2,7 +2,7 @@
 title: Article Title
 bgnd: "#FFFFFF"
 highlight: "#0376BB"
-heroimg: 1-hero.jpg
+heroimg: hero.jpg
 heroalt: "A hero on his journey"
 button: "Read on"
 href: "{{ .Site.BaseURL }}"
