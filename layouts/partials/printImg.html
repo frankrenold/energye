@@ -3,7 +3,7 @@
 {{ if eq $img nil }}{{ $img = resources.Get .src }}{{ end }}{{/* 3. IMG FROM ASSETS  */}}
 {{ if $img }}
   {{ if .fill }}{{ $img = $img.Fill .fill }}{{ end }}
-  {{ if .filter }}{{ $img = $img.Filter (partial "returnFilterQueue.html" .filter) }}{{ end }}
+  {{ if .filter }}{{ $img = $img.Filter (partial "return-filter-queue.html" .filter) }}{{ end }}
   <figure {{ with .class }}class="{{ . }}"{{ end }}>
     {{ with .link }}<a href="{{ . }}">{{ end }}
       <img src="{{ $img.RelPermalink }}" {{ if or (.alt) (.caption) }}alt="{{ with .alt }}{{ . }}{{ else }}{{ .caption }}{{ end }}"{{ end }} />
