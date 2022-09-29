@@ -1,0 +1,28 @@
+{{ $img := .Page.Resources.GetMatch .src }}{{/* 1. IMG FROM PAGE RESOURCES  */}}
+{{ if (and (eq $img nil) (.Page.Parent)) }}{{ $img = .Page.Parent.Resources.GetMatch .src }}{{ end }}{{/* 2. IMG FROM PARENT PAGE RESOURCES  */}}
+{{ if eq $img nil }}{{ $img = resources.Get .src }}{{ end }}{{/* 3. IMG FROM ASSETS  */}}
+{{ if $img }}
+  {{ if .fill }}{{ $img = $img.Fill .fill }}{{ end }}
+  {{ if .filter }}{{ $img = $img.Filter (partial "return-filter-queue.html" .filter) }}{{ end }}
+  <figure {{ with .class }}class="{{ . }}"{{ end }}>
+    {{ with .link }}<a href="{{ . }}">{{ end }}
+      <img src="{{ $img.RelPermalink }}" {{ if or (.alt) (.caption) }}alt="{{ with .alt }}{{ . }}{{ else }}{{ .caption }}{{ end }}"{{ end }} />
+    {{ if .link }}</a>{{ end }}
+    {{ if or (or (.caption)) (.attr) }}
+      <figcaption>
+        {{ if .title }}<h4>{{ .title }}</h4>{{ end }}
+        {{ if or (.caption) (.attr) }}<p>
+        {{ .caption }}
+        {{ with .attrlink }}<a href="{{ . }}"> {{ end }}
+        {{ .attr }}
+        {{ if .attrlink }}</a> {{ end }}
+        </p>{{ end }}
+        {{ if .origin }}
+          <p class="origin{{ if .licenseLink }} cc{{ end }}">
+            {{ i18n "image_source" }}: {{ with .originLink }}<a target="_blank" href="{{ . }}">{{ end }}{{ .origin }}{{ if .originLink }}</a>{{ end }}{{ with .licenseLink }} (<a target="_blank" href="{{ . }}">{{ i18n "image_license" }}</a>){{ end }}
+          </p>
+        {{ end }}
+      </figcaption>
+    {{ end }}
+  </figure>
+{{ end }}
