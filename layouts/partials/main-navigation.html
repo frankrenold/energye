@@ -1,17 +1,17 @@
 <ul class="nav{{ if .IsHome }} homepage{{ end }}">
 	{{- $currentPage := . -}}
-    {{- range .Site.Menus.main -}}
-	    {{- $menu_item_url := .URL | relLangURL -}}
-	    {{- $page_url:= $currentPage.RelPermalink | relLangURL -}}
-	    <li class="{{ if eq $menu_item_url $page_url }}active{{ else }}inactive{{ end }}">
-	        <a href="{{ .URL | relLangURL }}">{{ .Name | safeHTML }}</a>
-	    </li>
+  {{- range .Site.Menus.main -}}
+    {{- $menu_item_url := .URL | relLangURL -}}
+    {{- $page_url:= $currentPage.RelPermalink | relLangURL -}}
+    <li class="{{ if eq $menu_item_url $page_url }}active{{ else }}inactive{{ end }}">
+        <a href="{{ .URL | relLangURL }}"{{ with .Params.target }} target="{{ . }}"{{ end }}>{{ .Name | safeHTML }}</a>
+    </li>
+  {{- end -}}
+  {{- if $currentPage.IsTranslated -}}
+    {{- range $currentPage.Translations -}}
+    <li class="translation">
+        <a href="{{ .RelPermalink }}">{{ .Lang }}</a>
+    </li>
     {{- end -}}
-    {{- if $currentPage.IsTranslated -}}
-	    {{- range $currentPage.Translations -}}
-	    <li class="translation">
-	        <a href="{{ .RelPermalink }}">{{ .Lang }}</a>
-	    </li>
-	    {{- end -}}
-		{{- end -}}
+	{{- end -}}
 </ul>
