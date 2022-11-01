@@ -43,6 +43,9 @@
 		background: white;
 		margin-top: 1.5rem;
 	}
+	.hide-with-sidebar {
+		display: none !important;
+	}
 	.portfolio-item { width: 33.33%; }
 	.portfolio-content { width: 66.66%; }
 	.portfolio-container h3.xxs {

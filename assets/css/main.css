@@ -145,6 +145,10 @@ a:hover {
 	border-bottom: .2rem solid var(--fg-link);
 }
 
+a.no-hover:hover {
+	border-bottom: inherit;
+}
+
 a.homelink {
 	color: var(--fg-title);
 }
@@ -260,6 +264,26 @@ figcaption p.cc {
 .featuredimg figcaption {
 	padding: 0 ;
 	border: none;
+}
+
+a.button {
+	background-color: var(--fg-link);
+	padding: .5rem 0;
+	margin-bottom: 1.5rem;
+	border-radius: .2rem;
+	text-align: center;
+	font-family: var(--ff-sserif);
+	color: var(--bg-g1);
+	font-size: 1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: inline-block;
+	width: 100%;
+}
+
+a.button:hover {
+	border: none;
+	color: var(--fg-text);
 }
 
 .portfolio-container {
