@@ -8,7 +8,7 @@
     {{ with .link }}<a href="{{ . }}">{{ end }}
       <img src="{{ $img.RelPermalink }}" {{ if or (.alt) (.caption) }}alt="{{ with .alt }}{{ . }}{{ else }}{{ .caption }}{{ end }}"{{ end }} />
     {{ if .link }}</a>{{ end }}
-    {{ if or (or (.caption)) (.attr) }}
+    {{ if or (.caption) (.attr) (.origin) }}
       <figcaption>
         {{ if .title }}<h4>{{ .title }}</h4>{{ end }}
         {{ if or (.caption) (.attr) }}<p>

@@ -4,7 +4,7 @@
 
 ## SETUP
 
-### As a HUGO module ([preferred](https://www.hugofordevelopers.com/articles/master-hugo-modules-managing-themes-as-modules/))
+### As a HUGO module ([preferred](https://www.nickgracilla.com/posts/master-hugo-modules-managing-themes-as-modules/))
 
 #### Install
 
@@ -23,7 +23,7 @@ module:
   - path: github.com/frankrenold/energye
 ```
 
-[Read more](https://www.hugofordevelopers.com/articles/master-hugo-modules-managing-themes-as-modules/)
+[Read more](https://www.nickgracilla.com/posts/master-hugo-modules-managing-themes-as-modules/)
 
 #### Update after installation
 ```
